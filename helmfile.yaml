@@ -18,5 +18,11 @@ releases:
     values:
       - values/zigbee2mqtt.yaml.gotmpl
 
+  # Home Assistant
+  - name: home-assistant
+    chart: k8s-at-home/home-assistant
+    values:
+      - values/home-assistant.yaml.gotmpl
+
 values:
   - .env.{{ .Environment.Name }}.yaml

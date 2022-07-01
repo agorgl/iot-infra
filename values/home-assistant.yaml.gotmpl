@@ -1,0 +1,14 @@
+ingress:
+  main:
+    enabled: true
+    ingressClassName: "nginx"
+    annotations:
+      nginx.org/websocket-services: home-assistant
+    hosts:
+      - host: home-assistant.{{ .Values.domain }}
+        paths:
+          - path: /
+
+persistence:
+  config:
+    enabled: true
