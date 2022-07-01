@@ -12,5 +12,11 @@ releases:
     values:
       - values/mosquitto.yaml.gotmpl
 
+  # Zigbee2MQTT
+  - name: zigbee2mqtt
+    chart: k8s-at-home/zigbee2mqtt
+    values:
+      - values/zigbee2mqtt.yaml.gotmpl
+
 values:
   - .env.{{ .Environment.Name }}.yaml

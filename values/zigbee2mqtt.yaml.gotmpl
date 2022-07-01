@@ -1,0 +1,19 @@
+ingress:
+  main:
+    enabled: true
+    ingressClassName: "nginx"
+    hosts:
+      - host: zigbee2mqtt.{{ .Values.domain }}
+        paths:
+          - path: /
+
+env:
+  ZIGBEE2MQTT_DATA: /tmp
+
+config:
+  homeassistant: true
+  mqtt:
+    server: "mqtt://mosquitto"
+  serial:
+      port: {{ .Values.zigbee.serial }}
+      adapter: ezsp
