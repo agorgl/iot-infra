@@ -1,0 +1,21 @@
+service:
+  main:
+    type: LoadBalancer
+    annotations:
+      metallb.universe.tf/allow-shared-ip: "ingress"
+    ports:
+      http:
+        enabled: false
+        port: 8080
+      mqtt:
+        enabled: true
+        port: 1883
+
+ingress:
+  main:
+    enabled: true
+    ingressClassName: "nginx"
+    hosts:
+      - host: mqtt.{{ .Values.domain }}
+        paths:
+          - path: /

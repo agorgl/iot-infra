@@ -1,0 +1,16 @@
+repositories:
+  # K8s@Home charts, https://github.com/k8s-at-home/charts/tree/master/charts/stable
+  - name: k8s-at-home
+    url: https://k8s-at-home.com/charts/
+
+namespace: iot
+
+releases:
+  # Mosquitto
+  - name: mosquitto
+    chart: k8s-at-home/mosquitto
+    values:
+      - values/mosquitto.yaml.gotmpl
+
+values:
+  - .env.{{ .Environment.Name }}.yaml
