@@ -7,8 +7,11 @@ ingress:
         paths:
           - path: /
 
-env:
-  ZIGBEE2MQTT_DATA: /tmp
+persistence:
+  data:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 1Gi
 
 config:
   homeassistant: true
