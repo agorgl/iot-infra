@@ -15,3 +15,9 @@ ingress:
 persistence:
   config:
     enabled: true
+
+  dbus:
+    enabled: true
+    type: hostPath
+    hostPath: /run/dbus
+    readOnly: true
